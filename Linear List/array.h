@@ -21,6 +21,8 @@ int delete_node(Vector *vector, int loc);
 
 int search(Vector *vector, int value);
 
+void rotate_left(Vector *vector, int offset);
+
 void print(Vector *vector);
 
 void clear(Vector *vector);

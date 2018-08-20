@@ -66,6 +66,33 @@ int search(Vector *vector, int value)
 	return ERROR;
 }
 
+void rotate_left(Vector *vector, int offset)
+{
+	if (offset <= 0 || offset >= vector->length)
+	{
+		return;
+	}
+
+	int *new_data = (int *)malloc(sizeof(int) * vector->size);
+	int count = 0;
+	for (int i = offset; i < vector->length; i++)
+	{
+		new_data[count] = vector->data[i];
+		count++;
+	}
+	for (int i = 0; i < offset; i++)
+	{
+		new_data[count] = vector->data[i];
+		count++;
+	}
+	for (int i = 0; i < vector->length; i++)
+	{
+		vector->data[i] = new_data[i];
+	}
+
+	free(new_data);
+}
+
 void print(Vector *vector)
 {
 	for (int i = 0; i < vector->length; i++)
