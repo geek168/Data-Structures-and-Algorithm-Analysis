@@ -12,7 +12,8 @@ LinkedList insert_intersect(LinkedList head, Node *node)
 		return head;
 	}
 
-	if (node->data <= head->data)
+	//if (node->data <= head->data)
+	if (node->data < head->data)
 	{
 		node->next = head;
 		head = node;
@@ -29,10 +30,15 @@ LinkedList insert_intersect(LinkedList head, Node *node)
 				current_node->next = node;
 				break;
 			}
-			else if (current_node->next != NULL && node->data <= current_node->next->data)
+			/*else if (current_node->next != NULL && node->data <= current_node->next->data)*/
+			else if (current_node->next != NULL && node->data < current_node->next->data)
 			{
 				node->next = current_node->next;
 				current_node->next = node;
+				break;
+			}
+			else if (current_node->next != NULL && node->data == current_node->next->data)
+			{
 				break;
 			}
 			else
@@ -42,7 +48,7 @@ LinkedList insert_intersect(LinkedList head, Node *node)
 		}
 		else if (node->data == current_node->data)
 		{
-			current_node->next = node;
+			//current_node->next = node;
 			break;
 		}
 	}
