@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="array.h" />
+    <ClInclude Include="intersect.h" />
     <ClInclude Include="josephus.h" />
     <ClInclude Include="linkedlist.h" />
     <ClInclude Include="stdafx.h" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Array.cpp" />
+    <ClCompile Include="intersect.cpp" />
     <ClCompile Include="josephus.cpp" />
     <ClCompile Include="Linear List.cpp" />
     <ClCompile Include="linkedlist.cpp" />
