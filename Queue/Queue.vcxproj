@@ -142,11 +142,13 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="circularqueue.h" />
     <ClInclude Include="queue.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="circularqueue.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="queuecpp.cpp" />
     <ClCompile Include="stdafx.cpp" />
