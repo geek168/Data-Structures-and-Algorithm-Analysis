@@ -143,12 +143,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="expressionevaluation.h" />
+    <ClInclude Include="rpn.h" />
     <ClInclude Include="stack.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="expressionevaluation.cpp" />
+    <ClCompile Include="rpn.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="stackcpp.cpp" />
     <ClCompile Include="stdafx.cpp" />

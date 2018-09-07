@@ -30,6 +30,9 @@
     <ClInclude Include="expressionevaluation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="rpn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -42,6 +45,9 @@
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="expressionevaluation.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rpn.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>

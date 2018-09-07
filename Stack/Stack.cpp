@@ -2,11 +2,12 @@
 //
 
 #include "stdafx.h"
-#include "expressionevaluation.h"
+//#include "expressionevaluation.h"
+#include "rpn.h"
 
 int main()
 {
-	Stack *numbers = (Stack *)malloc(sizeof(Stack));
+	/*Stack *numbers = (Stack *)malloc(sizeof(Stack));
 	Stack *operators = (Stack *)malloc(sizeof(Stack));
 	int m, n;
 	scanf("%d", &m);
@@ -42,7 +43,30 @@ int main()
 	printf("%d\n", top(numbers));
 	clear(numbers);
 	clear(operators);
+	free(buffer);*/
+
+	Stack *numbers = (Stack *)malloc(sizeof(Stack));
+	Stack *operators = (Stack *)malloc(sizeof(Stack));
+	int m;
+	scanf("%d", &m);
+	init(numbers, m);
+	init(operators, m);
+	char *buffer = (char *)malloc(sizeof(char) * m);
+	scanf("%s", buffer);
+	output_rpn(buffer, numbers, operators);
+
+	int i = 0;
+	while (i <= numbers->top_index)
+	{
+		printf("%c", numbers->elements[i]);
+		i++;
+	}
+	printf("\n");
+
 	free(buffer);
+	clear(numbers);
+	clear(operators);
+
     return 0;
 }
 
