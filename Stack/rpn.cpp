@@ -48,7 +48,9 @@ void output_rpn(char *buffer, Stack *numbers, Stack *operators)
 				{
 					if (precede_rpn(buffer[i], top(operators)))
 					{
+						push(numbers, buffer[i + 1]);
 						push(numbers, buffer[i]);
+						i++;
 					}
 					else
 					{
