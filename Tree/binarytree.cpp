@@ -1,3 +1,4 @@
+#include <string.h>
 #include "binarytree.h"
 
 Node* init(int data)
@@ -71,4 +72,19 @@ Node* build_demo()
 	node->rchild->lchild = init(6);
 	node->rchild->rchild = init(7);
 	return node;
+}
+
+Node* build_demo(char pre_str[], char in_str[], int len)
+{
+	Node *p = init(pre_str[0] - '0');
+	int pos = strchr(in_str, pre_str[0]) - in_str;
+	if (pos > 0)
+	{
+		p->lchild = build_demo(pre_str + 1, in_str, pos);
+	}
+	if (len - pos - 1)
+	{
+		p->rchild = build_demo(pre_str + pos + 1, in_str + pos + 1, len - pos - 1);
+	}
+	return p;
 }

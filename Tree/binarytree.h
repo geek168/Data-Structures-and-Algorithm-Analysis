@@ -18,3 +18,5 @@ void inorder(Node *node);
 void postorder(Node *node);
 
 Node* build_demo();
+
+Node* build_demo(char pre_str[], char in_str[], int len);
