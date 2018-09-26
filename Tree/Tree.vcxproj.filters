@@ -30,6 +30,9 @@
     <ClInclude Include="generalizedlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="generalizedlistlevelorder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -42,6 +45,9 @@
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="generalizedlist.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="generalizedlistlevelorder.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>

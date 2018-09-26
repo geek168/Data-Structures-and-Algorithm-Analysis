@@ -3,8 +3,9 @@
 
 #include "stdafx.h"
 //#include "binarytree.h"
-#include <ctype.h>
-#include "generalizedlist.h"
+//#include <ctype.h>
+//#include "generalizedlist.h"
+#include "generalizedlistlevelorder.h"
 
 int main()
 {
@@ -28,7 +29,7 @@ int main()
 
 	/*样例输入：A B C D E $*/
 	/*样例输出：A(B(D,E),C)*/
-	Queue *queue = (Queue *)malloc(sizeof(Queue));
+	/*Queue *queue = (Queue *)malloc(sizeof(Queue));
 	char t;
 	int i = 0;
 	while (scanf("%c", &t) != EOF && getchar() != '\n')
@@ -66,7 +67,77 @@ int main()
 		cleartree(tree);
 		free(buffer);
 	}
-	clear(queue);
+	clear(queue);*/
+
+	/*样例输入：A(B(D),C)*/
+	/*样例输出：A B C D*/
+	Stack *stack = (Stack *)malloc(sizeof(Stack));
+	Stack *temp = (Stack *)malloc(sizeof(Stack));
+	Queue *queue = (Queue *)malloc(sizeof(Queue));
+	initstack(stack, 20);
+	initstack(temp, 3);
+	int size = 0;
+
+	char c;
+	while ((c = getchar()) != '\n' && c != EOF)
+	{
+		size++;
+		if (c != ')')
+		{
+			Node *n = inittree(c);
+			push(stack, n);
+		}
+		else
+		{
+			while (top(stack)->data != '(')
+			{
+				if (top(stack)->data != ',')
+				{
+					push(temp, top(stack));
+				}
+				pop(stack);
+			}
+			pop(stack);// (
+			push(temp, top(stack));
+			pop(stack);// ( 前的字符
+			int i = 0;
+			Node *head;
+			while (!empty(temp))
+			{
+				if (i == 0)
+				{
+					head = top(temp);
+					pop(temp);
+				}
+				else if (i == 1)
+				{
+					head->lchild = top(temp);
+					pop(temp);
+				}
+				else
+				{
+					head->rchild = top(temp);
+					pop(temp);
+				}
+				i++;
+			}
+			push(stack, head);
+		}
+	}
+
+
+
+	initqueue(queue, size);
+	if (stack->top >= 0)
+	{
+		Node *tree = stack->data[0];
+		levelorder(tree, queue);
+		cleartrees(tree);
+	}
+
+	clearstack(stack);
+	clearstack(temp);
+	clearqueue(queue);
 
     return 0;
 }
