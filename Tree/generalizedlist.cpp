@@ -75,6 +75,10 @@ void pre_order(Node *tree)
 	}
 	if (tree->rchild != NULL)
 	{
+		if (tree->lchild == NULL)
+		{
+			printf("(");
+		}
 		printf(",");
 		pre_order(tree->rchild);
 		if (tree->rchild->lchild != NULL) //如果子树结点大于6个补全当前结点最外层的括号
