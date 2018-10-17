@@ -16,6 +16,7 @@ void init_graph(Graph_LinkedList *g, int n)
 	{
 		g->edges[i] = NULL;
 	}
+	memset(g->visited, 0, sizeof(g->visited));
 }
 
 void insert_graph(Graph_LinkedList *g, int a, int x, int y)
@@ -64,4 +65,18 @@ void clear_graph(Graph_LinkedList *g)
 		}
 	}
 	free(g);
+}
+
+void dfs(Graph_LinkedList *g, int vertex)
+{
+	printf("%d\n", vertex);
+	g->visited[vertex] = 1;
+
+	for (Node *adj = g->edges[vertex]; adj != NULL; adj = adj->next)
+	{
+		if (!g->visited[adj->data])
+		{
+			dfs(g, adj->data);
+		}
+	}
 }

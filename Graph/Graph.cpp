@@ -20,17 +20,33 @@ int main()
 	output(g);
 	free(g);*/
 
+	//Graph_LinkedList *g = (Graph_LinkedList *)malloc(sizeof(Graph_LinkedList));
+	//int v, e;
+	//scanf("%d %d", &v, &e);
+	//init_graph(g, v);
+	//for (int i = 0; i < e; i++)
+	//{
+	//	int a, x, y;
+	//	scanf("%d %d %d", &a, &x, &y);
+	//	insert_graph(g, a, x, y);
+	//}
+	//output_graph(g);
+	//clear_graph(g);
+
+
 	Graph_LinkedList *g = (Graph_LinkedList *)malloc(sizeof(Graph_LinkedList));
 	int v, e;
 	scanf("%d %d", &v, &e);
 	init_graph(g, v);
 	for (int i = 0; i < e; i++)
 	{
-		int a, x, y;
-		scanf("%d %d %d", &a, &x, &y);
-		insert_graph(g, a, x, y);
+		int x, y;
+		scanf("%d %d", &x, &y);
+		insert_graph(g, 1, x, y);
 	}
-	output_graph(g);
+	int k;
+	scanf("%d", &k);
+	dfs(g, k);
 	clear_graph(g);
 
     return 0;
