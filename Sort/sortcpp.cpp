@@ -80,6 +80,52 @@ void merge_sort(int *data, int l, int r)
 	free(temp);
 }
 
+void select_sort(int *data, int length)
+{
+	for (int i = 0; i < length - 1; i++)
+	{
+		int temp = i;
+		for (int j = i + 1; j < length; j++)
+		{
+			if (data[temp] > data[j])
+			{
+				temp = j;
+			}
+		}
+		if (i != temp)
+		{
+			swap(&data[i], &data[temp]);
+		}
+	}
+}
+
+void quick_sort(int *data, int l, int r)
+{
+	if (l > r)
+	{
+		return;
+	}
+
+	int pivot = data[l], low = l, high = r;
+	while (low < high)
+	{
+		while (low < high && data[high] >= pivot)
+		{
+			high--;
+		}
+		data[low] = data[high];
+		while (low < high && data[low] <= pivot)
+		{
+			low++;
+		}
+		data[high] = data[low];
+	}
+	data[low] = pivot;
+
+	quick_sort(data, l, low - 1);
+	quick_sort(data, low + 1, r);
+}
+
 void printf(int *data, int length)
 {
 	for (int i = 0; i < length; i++)

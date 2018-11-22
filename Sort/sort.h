@@ -9,4 +9,8 @@ void bubble_sort(int *data, int length);
 
 void merge_sort(int *data, int l, int r);
 
+void select_sort(int *data, int length);
+
+void quick_sort(int *data, int l, int r);
+
 void printf(int *data, int length);

@@ -11,7 +11,9 @@ int main()
 	int length = 10;
 	//insert_sort(data, length);
 	//bubble_sort(data, length);
-	merge_sort(data, 0, length - 1);
+	//merge_sort(data, 0, length - 1);
+	//select_sort(data, length);
+	quick_sort(data, 0, length - 1);
 	printf(data, length);
 
     return 0;
