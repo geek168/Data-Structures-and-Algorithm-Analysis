@@ -6,24 +6,28 @@
 
 int main()
 {
+	/* sample data input
+	6
+	8 5 9 4 6 3
+	1
+	5
+	*/
 	Node *binarytree = NULL;
+	int m;
+	scanf("%d", &m);
+	for (int i = 0; i < m; i++)
+	{
+		int v;
+		scanf("%d", &v);
+		binarytree = insert(binarytree, v);
+	}
 	int n;
 	scanf("%d", &n);
 	for (int i = 0; i < n; i++)
 	{
-		int k;
-		scanf("%d", &k);
-		binarytree = insert(binarytree, k);
-	}
-	int v;
-	scanf("%d", &v);
-	if (search(binarytree, v) != NULL)
-	{
-		printf("search success!\n");
-	}
-	else
-	{
-		printf("search failed!\n");
+		int v;
+		scanf("%d", &v);
+		delete_tree(binarytree, v);
 	}
 	in_order_reversal(binarytree);
 	clear(binarytree);

@@ -7,12 +7,20 @@ typedef struct Node
 	struct Node *lchild, *rchild, *father;
 } Node;
 
-Node* init(int value, Node* father);
+Node* init(int value, Node *father);
 
-Node* insert(Node* node, int value);
+Node* insert(Node *node, int value);
 
-Node* search(Node* node, int value);
+Node* search(Node *node, int value);
 
-void in_order_reversal(Node* node);
+Node* predecessor(Node *node);
 
-void clear(Node* node);
+Node* successor(Node *node);
+
+void remove_node(Node *delete_node);
+
+int delete_tree(Node *node, int value);
+
+void in_order_reversal(Node *node);
+
+void clear(Node *node);
