@@ -41,6 +41,36 @@ Node* insert(Node* node, int value)
 	return node;
 }
 
+Node* search(Node* node, int value)
+{
+	if (node == NULL || node->data == value)
+	{
+		return node;
+	}
+	else if(value < node->data)
+	{
+		if (node->lchild == NULL)
+		{
+			return NULL;
+		}
+		else
+		{
+			search(node->lchild, value);
+		}
+	}
+	else if(value > node->data)
+	{
+		if (node->rchild == NULL)
+		{
+			return NULL;
+		}
+		else
+		{
+			search(node->rchild, value);
+		}
+	}
+}
+
 void in_order_reversal(Node* node)
 {
 	if (node->lchild != NULL)

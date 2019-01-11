@@ -15,16 +15,16 @@ int main()
 		scanf("%d", &k);
 		binarytree = insert(binarytree, k);
 	}
-	//int v;
-	//scanf("%d", &v);
-	//if (search(binarytree, v) != NULL)
-	//{
-	//	printf("search success!\n");
-	//}
-	//else
-	//{
-	//	printf("search failed!\n");
-	//}
+	int v;
+	scanf("%d", &v);
+	if (search(binarytree, v) != NULL)
+	{
+		printf("search success!\n");
+	}
+	else
+	{
+		printf("search failed!\n");
+	}
 	in_order_reversal(binarytree);
 	clear(binarytree);
     return 0;
