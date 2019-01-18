@@ -7,6 +7,13 @@
 int main()
 {
 
+	/* Sample Data
+		10
+		1 5 7 3 2 9 8 6 4 10
+		3
+		3 7 11
+	*/
+
 	init_NIL();
 	SBTNode *binarytree = NULL;
 	int m;
