@@ -13,9 +13,14 @@ int main()
 	{
 		push(heap, arr[i]);
 	}
+
 	output(heap);
 	pop(heap);
 	output(heap);
+
+	heap_sort(heap);
+	output(heap);
+
 	clear(heap);
 	return 0;
 }

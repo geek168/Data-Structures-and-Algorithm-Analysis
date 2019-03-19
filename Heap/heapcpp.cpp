@@ -53,6 +53,15 @@ void update(Heap *heap, int pos, int size)
 	}
 }
 
+void heap_sort(Heap *heap)
+{
+	for (int i = heap->size - 1; i >= 1; i--)
+	{
+		swap(&heap->data[0], &heap->data[i]);
+		update(heap, 0, i);
+	}
+}
+
 void output(Heap *heap)
 {
 	for (int i = 0; i < heap->size; i++)

@@ -17,6 +17,8 @@ void pop(Heap *heap);
 
 void update(Heap *heap, int pos, int size);
 
+void heap_sort(Heap *heap);
+
 void output(Heap *heap);
 
 void clear(Heap *heap);
