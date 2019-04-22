@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "array.h"
 #include "linkedlist.h"
+#include "floodfill.h"
 
 int main()
 {
@@ -49,19 +50,47 @@ int main()
 	//dfs(g, k);
 	//clear_graph(g);
 
-	int n, m, k;
+	//int n, m, k;
+	//scanf("%d %d", &n, &m);
+	//Graph_LinkedList *g = (Graph_LinkedList *)malloc(sizeof(Graph_LinkedList));
+	//init_graph(g, n);
+	//for (int i = 0; i < m; ++i) {
+	//	int x, y;
+	//	scanf("%d %d", &x, &y);
+	//	insert_graph(g, 1, x, y);
+	//}
+	//scanf("%d", &k);
+	//bfs(g, k);
+	//clear_graph(g);
+	//return 0;
+
+
+	/*
+	input:
+	11 10
+	0 1
+	0 2
+	1 2
+	1 3
+	2 3
+	4 5
+	4 6
+	7 8
+	8 9
+	8 10
+	*/
+	Graph_floodfill *g = (Graph_floodfill *)malloc(sizeof(Graph_floodfill));
+	int n, m;
 	scanf("%d %d", &n, &m);
-	Graph_LinkedList *g = (Graph_LinkedList *)malloc(sizeof(Graph_LinkedList));
-	init_graph(g, n);
-	for (int i = 0; i < m; ++i) {
-		int x, y;
-		scanf("%d %d", &x, &y);
-		insert_graph(g, 1, x, y);
+	init_floodfill(g, n);
+	for (int i = 0; i < m; i++)
+	{
+		int a, b;
+		scanf("%d %d", &a, &b);
+		insert_floodfill(g, a, b);
 	}
-	scanf("%d", &k);
-	bfs(g, k);
-	clear_graph(g);
-	return 0;
+	floodfill(g);
+	free(g);
 
     return 0;
 }
