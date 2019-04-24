@@ -33,6 +33,9 @@
     <ClInclude Include="floodfill.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="prim.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="floodfill.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="prim.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

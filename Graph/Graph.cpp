@@ -5,6 +5,7 @@
 #include "array.h"
 #include "linkedlist.h"
 #include "floodfill.h"
+#include "prim.h"
 
 int main()
 {
@@ -65,31 +66,57 @@ int main()
 	//return 0;
 
 
+	///*
+	//input:
+	//11 10
+	//0 1
+	//0 2
+	//1 2
+	//1 3
+	//2 3
+	//4 5
+	//4 6
+	//7 8
+	//8 9
+	//8 10
+	//*/
+	//Graph_floodfill *g = (Graph_floodfill *)malloc(sizeof(Graph_floodfill));
+	//int n, m;
+	//scanf("%d %d", &n, &m);
+	//init_floodfill(g, n);
+	//for (int i = 0; i < m; i++)
+	//{
+	//	int a, b;
+	//	scanf("%d %d", &a, &b);
+	//	insert_floodfill(g, a, b);
+	//}
+	//floodfill(g);
+	//free(g);
+
 	/*
 	input:
-	11 10
-	0 1
-	0 2
-	1 2
-	1 3
-	2 3
-	4 5
-	4 6
-	7 8
-	8 9
-	8 10
+	5 7
+	0 1 75
+	0 2 9
+	1 2 95
+	1 3 51
+	2 3 19
+	2 4 42
+	3 4 31
+	0
 	*/
-	Graph_floodfill *g = (Graph_floodfill *)malloc(sizeof(Graph_floodfill));
 	int n, m;
 	scanf("%d %d", &n, &m);
-	init_floodfill(g, n);
-	for (int i = 0; i < m; i++)
-	{
-		int a, b;
-		scanf("%d %d", &a, &b);
-		insert_floodfill(g, a, b);
+	Graph_prim *g = (Graph_prim *)malloc(sizeof(Graph_prim));
+	init_prim(g, n);
+	for (int i = 0; i < m; i++) {
+		int a, b, c;
+		scanf("%d %d %d", &a, &b, &c);
+		insert_prim(g, a, b, c);
 	}
-	floodfill(g);
+	int v;
+	scanf("%d", &v);
+	printf("%d\n", prim(g, v));
 	free(g);
 
     return 0;
