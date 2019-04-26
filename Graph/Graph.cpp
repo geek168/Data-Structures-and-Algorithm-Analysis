@@ -6,6 +6,7 @@
 #include "linkedlist.h"
 #include "floodfill.h"
 #include "prim.h"
+#include "dijkstra.h"
 
 int main()
 {
@@ -105,20 +106,49 @@ int main()
 	3 4 31
 	0
 	*/
+	//int n, m;
+	//scanf("%d %d", &n, &m);
+	//Graph_prim *g = (Graph_prim *)malloc(sizeof(Graph_prim));
+	//init_prim(g, n);
+	//for (int i = 0; i < m; i++) {
+	//	int a, b, c;
+	//	scanf("%d %d %d", &a, &b, &c);
+	//	insert_prim(g, a, b, c);
+	//}
+	//int v;
+	//scanf("%d", &v);
+	//printf("%d\n", prim(g, v));
+	//free(g);
+
+	/*
+	input:
+	5 8
+	0 1 10
+	0 2 5
+	1 2 3
+	1 3 1
+	2 3 9
+	2 4 2
+	3 4 6
+	0 4 8
+	2
+	*/
 	int n, m;
 	scanf("%d %d", &n, &m);
-	Graph_prim *g = (Graph_prim *)malloc(sizeof(Graph_prim));
-	init_prim(g, n);
+	Graph_dijkstra *g = (Graph_dijkstra *)malloc(sizeof(Graph_dijkstra));
+	init_dijkstra(g, n);
 	for (int i = 0; i < m; i++) {
 		int a, b, c;
 		scanf("%d %d %d", &a, &b, &c);
-		insert_prim(g, a, b, c);
+		insert_dijkstra(g, a, b, c);
 	}
 	int v;
 	scanf("%d", &v);
-	printf("%d\n", prim(g, v));
+	dijkstra(g, v);
+	for (int i = 0; i < n; i++) {
+		printf("%d: %d\n", i, g->dist[i]);
+	}
 	free(g);
-
-    return 0;
+	return 0;
 }
 

@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="array.h" />
+    <ClInclude Include="dijkstra.h" />
     <ClInclude Include="floodfill.h" />
     <ClInclude Include="linkedlist.h" />
     <ClInclude Include="prim.h" />
@@ -151,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="array.cpp" />
+    <ClCompile Include="dijkstra.cpp" />
     <ClCompile Include="floodfill.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="linkedlist.cpp" />
