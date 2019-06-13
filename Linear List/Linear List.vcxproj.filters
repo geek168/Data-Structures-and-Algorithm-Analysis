@@ -36,6 +36,9 @@
     <ClInclude Include="intersect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="palindrome.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -54,6 +57,9 @@
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="intersect.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="palindrome.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>

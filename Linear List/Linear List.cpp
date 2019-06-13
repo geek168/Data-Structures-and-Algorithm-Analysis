@@ -6,6 +6,7 @@
 //#include "linkedlist.h"
 //#include "josephus.h"
 #include "intersect.h"
+#include "palindrome.h"
 
 int main()
 {
@@ -91,48 +92,66 @@ int main()
 #pragma endregion
 
 
-	LinkedList head = NULL;
-	LinkedList list_one = NULL;
-	LinkedList list_two = NULL;
-	int m, v;
-	scanf("%d\n", &m);
-	for (int i = 0; i < m; i++)
+	//LinkedList head = NULL;
+	//LinkedList list_one = NULL;
+	//LinkedList list_two = NULL;
+	//int m, v;
+	//scanf("%d\n", &m);
+	//for (int i = 0; i < m; i++)
+	//{
+	//	scanf("%d", &v);
+	//	Node *node = (Node *)malloc(sizeof(Node));
+	//	node->data = v;
+	//	node->next = NULL;
+	//	list_one = insert_intersect(list_one, node);
+	//}
+	//scanf("%d\n", &m);
+	//for (int i = 0; i < m; i++)
+	//{
+	//	scanf("%d", &v);
+	//	Node *node = (Node *)malloc(sizeof(Node));
+	//	node->data = v;
+	//	node->next = NULL;
+	//	list_two = insert_intersect(list_two, node);
+	//}
+
+	//head = intersect(head, list_one, list_two);
+	//int count = 0;
+	//if (head != NULL)
+	//{
+	//	Node *current_node = head;
+	//	count = 1;
+	//	while (current_node->next != NULL)
+	//	{
+	//		current_node = current_node->next;
+	//		count++;
+	//	}
+	//}
+	//printf("%d\n", count);
+	//output_intersect(head);
+
+	//clear_intersect(head);
+	//clear_intersect(list_one);
+	//clear_intersect(list_two);
+
+	PalindromeNode *node = NULL;
+	
+	char c;
+	while ((c = getchar()) != '\n')
 	{
-		scanf("%d", &v);
-		Node *node = (Node *)malloc(sizeof(Node));
-		node->data = v;
-		node->next = NULL;
-		list_one = insert_intersect(list_one, node);
-	}
-	scanf("%d\n", &m);
-	for (int i = 0; i < m; i++)
-	{
-		scanf("%d", &v);
-		Node *node = (Node *)malloc(sizeof(Node));
-		node->data = v;
-		node->next = NULL;
-		list_two = insert_intersect(list_two, node);
+		node = new_node(c, node);
 	}
 
-	head = intersect(head, list_one, list_two);
-	int count = 0;
-	if (head != NULL)
+	if (is_palindrome(node))
 	{
-		Node *current_node = head;
-		count = 1;
-		while (current_node->next != NULL)
-		{
-			current_node = current_node->next;
-			count++;
-		}
+		printf("Yes\n");
 	}
-	printf("%d\n", count);
-	output_intersect(head);
+	else
+	{
+		printf("No\n");
+	}
+	clear(node);
 
-	clear_intersect(head);
-	clear_intersect(list_one);
-	clear_intersect(list_two);
-
-    return 0;
+	return 0;
 }
 
