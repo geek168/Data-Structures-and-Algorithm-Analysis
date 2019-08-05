@@ -144,3 +144,56 @@ int searchLastLessThanOrEqual(int *data, int n, int val)
 
 	return -1;
 }
+
+int searchRoatedSortedAarry(int *data, int n, int val)
+{
+	int low = 0;
+	int high = n - 1;
+
+	while (low <= high)
+	{
+		int mid = low + ((high - low) >> 1);
+		if (val < data[mid])
+		{
+			if (data[mid] < data[high])
+			{
+				high = mid - 1;
+			}
+			else
+			{
+				if (val >= data[low])
+				{
+					high = mid - 1;
+				}
+				else
+				{
+					low = mid + 1;
+				}
+			}
+		}
+		else if (val > data[mid])
+		{
+			if (data[mid] > data[low])
+			{
+				low = mid + 1;
+			}
+			else
+			{
+				if (val <= data[high])
+				{
+					low = mid + 1;
+				}
+				else
+				{
+					high = mid - 1;
+				}
+			}
+		}
+		else
+		{
+			return mid;
+		}
+	}
+
+	return -1;
+}

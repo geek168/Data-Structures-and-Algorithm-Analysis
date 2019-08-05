@@ -22,6 +22,9 @@ int main()
 	int data5[5] = { 3,4,6,7,10 };
 	a =  searchLastLessThanOrEqual(data5, 5, 5);
 
+	int data6[7] = { 4,5,6,7,0,1,2 };
+	a = searchRoatedSortedAarry(data6, 7, 0);
+
     return 0;
 }
 
